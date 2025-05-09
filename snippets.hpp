@@ -23,7 +23,4 @@ using str = string;
 #define pb push_back
 #define dbg(x) cerr << #x << ": " << x << endl;
 
-#include "DATASTRUCTS/segtree_purq.cpp"
-#include "DATASTRUCTS/segtree_lazy.cpp"
-
 #endif

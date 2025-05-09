@@ -2,6 +2,9 @@
 #include "../snippets.hpp"
 #endif
 
+/* Sieve of Eratosthenes code from cpalgs.
+returns an isPrime array up to the integer n */
+
 vec<bool> primeSieve(ll n) {
     vec<bool> isPrime(n+1,1);
 
