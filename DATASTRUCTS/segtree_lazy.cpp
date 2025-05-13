@@ -63,4 +63,9 @@ struct Segtree {
         combine();
     }
 
+    ~Segtree() {
+        delete lt;
+        delete rt;
+    }
+
 };

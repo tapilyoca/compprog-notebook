@@ -40,4 +40,9 @@ struct Segtree {
         rt->update(dex,upd);
         combine();
     }
+
+    ~Segtree() {
+        delete lt;
+        delete rt;
+    }
 };
