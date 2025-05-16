@@ -16,14 +16,14 @@ vec<vec<bool>> listToMatrix(ll m, ll n, vvll &adj) {
     return out;
 }
     
-bool bpm(vec<vec<bool>> &adj, ll u, bool vis[], ll matchR[]) {
+bool dfs_match(vec<vec<bool>> &adj, ll u, bool vis[], ll matchR[]) {
     ll m = adj.size();
     ll n = adj[0].size();
 
     for(int v = 0; v < n; v++) {
         if(adj[u][v] and not vis[v]) {
             vis[v] = 1;
-            if(matchR[v] < 0 or bpm(adj,matchR[v],vis,matchR)) {
+            if(matchR[v] < 0 or dfs_match(adj,matchR[v],vis,matchR)) {
                 matchR[v] = u;
                 return 1;
             }
@@ -44,7 +44,7 @@ ll bipartite_matching(vec<vec<bool>> &adj) {
     for(int u = 0; u < m; u++) {
         bool vis[n];
         memset(vis,0,sizeof(vis));
-        if(bpm(adj,u,vis,matchR)) out++;
+        if(dfs_match(adj,u,vis,matchR)) out++;
     }
     return out;
 }
